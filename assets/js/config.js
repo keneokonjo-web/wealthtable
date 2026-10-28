@@ -4,6 +4,6 @@
       instead of sending people to lu.ma. Leave it empty to simply open the Luma link in a new tab.
    Until a link is added, the buttons open an email to info@thewealthtableglobal.com. */
 window.WT_CONFIG = {
-  LUMA_URL: "",
-  LUMA_EVENT_ID: ""
+  LUMA_URL: "https://luma.com/3b32d6aa",
+  LUMA_EVENT_ID: "evt-Gn7oGLa0q6B4FaE"
 };
