@@ -50,20 +50,9 @@ Raw homepage text is in `docs/extracted/home-page-raw-text.txt`. All content bel
 - **Tech:** Elementor Pro 4.3, Fluent Forms, Jeg Elementor Kit, Sticky Header Effects, Swiper, e-gallery lightbox.
 
 ## 6. Assets saved (`concepts/img/`)
-**Logos** (`logo/`, transparent PNG, each in `-cream` and `-ink` colour):
-| File | What |
-|---|---|
-| `wt-monogram-*.png` | **Logo 1:** the "WT" mark only (cut from the footer lock-up, 777×338) |
-| `wordmark-*.png` | **Logo 2:** "THE WEALTH TABLE™" wordmark (1588×230) |
-| `tagline-*.png` | **Logo 3:** "Leave richer than you arrived." italic line (1067×74) |
-| `lockup-full-*.png` | Original combined lock-up, cropped tight |
-| `wt-monogram-nav-*.png` | The nav's original WT file, cropped tight (763×331) |
+**Logos** (`logo/`, transparent PNG in cream, white, brown, black, olive, navy, terracotta): `wt-monogram-*` (Logo 1, the WT mark), `wordmark-*` (Logo 2, THE WEALTH TABLE™), `tagline-*` (Logo 3, "Leave richer than you arrived."), `lockup-full-*` (combined).
 
-**Photographs** (`photos/`, 35 files, re-encoded ≤1800px JPEG, 7 MB total):
-- `nairobi-*` ×16 (13 June 2026: speakers in front of the "THE WEALTH TABLE" backdrop, long white-floral table, guests laughing, networking) + `nairobi-card` (KICC tower)
-- `accra-*` ×15 (3 Oct 2026: private residence, candlelit table, guests in green/blue/orange, chef, buffet) + `accra-card` (memorial park)
-- `lagos-card` (aerial Lagos waterfront), `lagos-event-poster` (the invitation), `founder-udo-okonjo` (see note above)
-- Original filenames are `Image-108xx.jpg` (Nairobi) and `QJP_123A6xxx.jpg` (Accra); mapping is in the name suffix.
+**Photographs** (`photos/`, 24 sharp frames kept of 35 found, JPEG q92, no upscaling): `n-*` Nairobi (11), `a-*` Accra (12, photographer mark cropped off), `poster` (Lagos invitation, used small). The three city card images from the live site and several soft frames were rejected; see `ROUND2_NOTES.md`. Originals' naming: Nairobi `Image-108xx`, Accra `QJP_123A6xxx`.
 
 ## 7. Issues spotted on the live site (for the rebrand conversation)
 1. Poster says 12:00 PM, site says 11:00 AM start, to be confirmed.

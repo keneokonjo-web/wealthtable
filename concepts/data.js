@@ -12,6 +12,7 @@ window.WT = {
   },
   rcc: 'https://rcc.africa/',
   img: (n) => 'img/photos/' + n + '.jpg',
+  alt: { 'n-10863':'Women seated along a long white-floral table in Nairobi','n-10880':'A speaker at the Nairobi table beneath The Wealth Table backdrop','n-10840':'Two guests sharing a laugh in Nairobi','n-10860':'Two smiling guests at the Nairobi table','n-10816':'Three guests laughing together in Nairobi','n-10817':'Two guests greeting each other in Nairobi','n-10836':'Guests mingling by the long table in Nairobi','n-10844':'A speaker addressing the room in Nairobi','n-10887':'Guests sharing a meal at the long table in Nairobi','n-10857':'A guest smiling at the table in Nairobi','n-10849':'A guest listening at the Nairobi table','a-6762':'Guests applauding at a long candlelit table in Accra','a-6812':'A long table of guests in Accra','a-6823':'A guest speaking animatedly in Accra','a-6797':'Guests chatting at a candlelit table in Accra','a-6565':'White flowers and gold details on the Accra table','a-6679':'A place setting with a conversation card in Accra','a-6626':'Three guests posing together in Accra','a-6917':'Three guests chatting by the buffet in Accra','a-6923':'Guests at the buffet in Accra','a-6949':'Two guests laughing at the table in Accra','a-6912':'Table styling in Accra','a-6618':'Two guests embracing in Accra','poster':'The Wealth Table Lagos invitation' },
   logo: (k, tone) => 'img/logo/' + k + '-' + (tone || 'cream') + '.png',
 
   gives: [
@@ -20,6 +21,13 @@ window.WT = {
     'Members of The Wealth Table are invited first.'
   ],
   pillars: ['Connection', 'Opportunity', 'Collaboration'],
+  steps: [
+    ['Register your interest', 'Join the waitlist for the table you would like to attend.'],
+    ['Receive your invitation', 'Invitations are released in waves, to the list before anyone else.'],
+    ['Choose your rate', 'Lagos: $200 for RCC members, $300 for non-members. Same gathering, same experience.'],
+    ['Pay securely', 'In US dollars, or in Nigerian naira at the applicable local rate.'],
+    ['Come to the table', 'Your place is confirmed on payment, subject to availability.']
+  ],
 
   lagos: {
     city: 'Lagos', country: 'Nigeria',
@@ -31,7 +39,7 @@ window.WT = {
     body: 'Building on the powerful conversations in Nairobi and Accra, The Wealth Table arrives in Lagos for a bold new chapter. This invitation-only gathering will bring together an exceptional circle of women leaders, entrepreneurs, investors, and wealth builders to explore one defining question:',
     question: 'How do we move more women from success to ownership?',
     fee: { rcc: '$200', non: '$300' },
-    card: 'lagos-card', poster: 'lagos-event-poster'
+    poster: 'poster'
   },
 
   nairobi: {
@@ -44,9 +52,9 @@ window.WT = {
       'In a room defined by openness, generosity and bold conversations, women shared experiences, challenged assumptions and explored what it truly means to build and own wealth on their own terms.',
       'The word of the day was Courage, a fitting beginning to a growing global conversation about women, wealth and ownership.'
     ],
-    women: '24', card: 'nairobi-card',
+    women: '24', word: 'Courage', pull: 'The word of the day was Courage, a fitting beginning to a growing global conversation about women, wealth and ownership.',
     cta: 'Join Next Nairobi Wait List',
-    gallery: ['nairobi-10844','nairobi-10840','nairobi-10832','nairobi-10836','nairobi-10860','nairobi-10874','nairobi-10820','nairobi-10827','nairobi-10887','nairobi-10816','nairobi-10880','nairobi-10890','nairobi-10857','nairobi-10817','nairobi-10863']
+    gallery: ['n-10863','n-10880','n-10840','n-10860','n-10816','n-10817','n-10836','n-10844','n-10887','n-10857']
   },
 
   accra: {
@@ -60,15 +68,15 @@ window.WT = {
       'The evening was marked by openness, shared wisdom, fresh perspectives, and a collective desire to move beyond conversations towards meaningful action.'
     ],
     closing: 'Different women. Shared ambition. Bigger possibilities.',
-    women: '25', card: 'accra-card',
+    women: '25', pull: 'Different women. Shared ambition. Bigger possibilities.',
     cta: 'Join Next Accra Waitlist',
-    gallery: ['accra-6762','accra-6797','accra-6949','accra-6679','accra-6923','accra-6917','accra-6585','accra-6582','accra-6618','accra-6912','accra-6565','accra-6812','accra-6823','accra-6626','accra-6725']
+    gallery: ['a-6762','a-6812','a-6823','a-6797','a-6565','a-6679','a-6626','a-6917','a-6923','a-6949']
   },
 
   founder: {
     name: 'Udo Okonjo', first: 'Udo', last: 'Okonjo',
     role: 'Founder, Radiant Collective Capital',
-    photo: 'founder-udo-okonjo',
+    photo: 'n-10849',
     body: [
       'Udo Okonjo believes the next chapter of women’s success must be about more than achievement. It must be about ownership.',
       'An entrepreneur, investor, board director, and founder of Radiant Collective Capital, Udo has spent decades championing women’s leadership, economic advancement, and the power of building wealth with intention.',

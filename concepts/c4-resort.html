@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wealth Table: Concept 4, Private Island Calm</title>
+<meta name="description" content="Concept 4 for The Wealth Table. Warm greige with one deep-navy band, thin italic serif headlines, overlapping image collages, a giant pale watermark and a sticky registration widget.">
+<link rel="icon" href="img/logo/wt-monogram-navy.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="common.css">
+<style>
+/* CONCEPT 4 · after Velaa Private Island (+ Lingers Suites)
+   Palette: greige #e8e6df, warm taupe ink #4b4335, one deep navy #040326 band (Velaa), taupe button #77715f (Lingers)
+   Taken from Velaa: very thin serif with italic emphasis words, translucent "BOOK NOW" style block in a quiet top bar,
+   overlapping image collage with the statement sitting between the pictures, small outlined-square arrow links, tagged tiles,
+   one deep navy band, full-bleed pull quote, numbered sitemap footer.
+   Taken from Lingers: giant pale watermark wordmark behind the page, and the sticky bottom-left date + REGISTER widget that is always on screen. */
+:root{--bg:#e8e6df;--ink:#4b4335;--navy:#040326;--taupe:#77715f;--white:#f7f5ef;--line:rgba(75,67,53,.25);--accent:#4b4335;
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Instrument Sans",system-ui,sans-serif;--pad:clamp(1.1rem,3vw,3rem);--ease:cubic-bezier(.22,1,.36,1)}
+body{font-family:var(--sans);font-size:.95rem;line-height:1.65}
+.ser{font-family:var(--serif);font-weight:300;letter-spacing:-.012em}
+.ser em{font-style:italic;font-weight:300}
+.tiny{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.lnk{display:inline-flex;align-items:center;gap:.8rem;font-size:.8rem}
+.lnk i{width:1.9rem;height:1.9rem;border:1px solid currentColor;display:grid;place-items:center;font-style:normal;font-size:.8rem;transition:background .4s,color .4s}
+.lnk:hover i{background:var(--ink);color:var(--bg)}
+.lnk.w i:hover{background:#f7f5ef;color:var(--navy)}
+.block{display:inline-flex;align-items:center;gap:1rem;background:var(--taupe);color:#f7f5ef;padding:1rem 1.6rem;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:background .4s,gap .5s var(--ease)}
+.block:hover{background:var(--ink);gap:1.6rem}
+.block.light{background:#f7f5ef;color:var(--navy)}.block.light:hover{background:#cfd9e6}
+
+/* top bar (Velaa): menu + links left, logo centre, language + translucent register block right */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:.9rem var(--pad);color:#f7f5ef;transition:background .5s,color .5s,padding .5s}
+.nav.solid{background:rgba(232,230,223,.9);backdrop-filter:blur(12px);color:var(--ink);padding-top:.55rem;padding-bottom:.55rem}
+.nav .l{display:flex;gap:1.4rem;align-items:center;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
+.nav .l .sep{width:1px;height:12px;background:currentColor;opacity:.5}
+.nav .l button{display:flex;gap:.6rem;align-items:center;letter-spacing:inherit;text-transform:inherit}
+.nav .l button i{display:grid;gap:3px}.nav .l button i b{display:block;width:14px;height:1px;background:currentColor}
+.nav .c{position:relative;height:18px;width:150px}
+.nav .c img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .4s}
+.nav .c .b{opacity:0}.nav.solid .c .a{opacity:0}.nav.solid .c .b{opacity:1}
+.nav .r{display:flex;gap:1.2rem;justify-content:flex-end;align-items:center;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
+.nav .r .reg{background:rgba(247,245,239,.22);backdrop-filter:blur(10px);padding:.8rem 1.3rem;font-weight:500;transition:background .4s,color .4s}
+.nav .r .reg:hover{background:#f7f5ef;color:var(--navy)}
+.nav.solid .r .reg{background:var(--taupe);color:#f7f5ef}
+@media(max-width:900px){.nav .l a,.nav .l .sep{display:none}}
+@media(max-width:560px){.nav .r span{display:none}.nav .c{width:104px}.nav .l button{font-size:0;gap:0}.nav .l button i{margin:0}.nav .r .reg{padding:.65rem .7rem;font-size:.58rem;letter-spacing:.1em}}
+.drawer{position:fixed;inset:0;z-index:300;background:var(--bg);display:grid;grid-template-columns:1fr 1fr;transform:translateX(-102%);transition:transform .9s cubic-bezier(.76,0,.24,1)}
+.drawer.open{transform:none}
+.drawer .x{position:absolute;top:1rem;left:var(--pad);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
+.drawer ol{align-self:center;padding:0 var(--pad);display:grid;gap:.2rem}
+.drawer li a{display:flex;gap:1.4rem;align-items:baseline;font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,6vw,5.4rem);line-height:1.08;letter-spacing:-.02em;transition:padding .5s var(--ease),opacity .3s}
+.drawer li a small{font:400 .72rem var(--sans);letter-spacing:.14em;opacity:.55;width:2rem}
+.drawer ol:hover a{opacity:.4}.drawer li a:hover{opacity:1;padding-left:1rem}
+.drawer .side{align-self:end;padding:var(--pad);display:grid;gap:1.2rem;font-size:.9rem}
+.drawer .side b{display:block;font-weight:400;opacity:.55;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:820px){.drawer{grid-template-columns:1fr}.drawer .side{display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;color:#f7f5ef;overflow:hidden;display:grid;align-content:end;padding:0 var(--pad) clamp(9rem,19vh,11rem)}
+.hero .bg{position:absolute;inset:-5% 0}.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;animation:slow 28s ease-out both}
+@keyframes slow{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,10,.5),rgba(20,16,10,.14) 40%,rgba(20,16,10,.66))}
+.hero>*{position:relative;z-index:2}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.8rem,8.4vw,9.4rem);line-height:.92;letter-spacing:-.03em;max-width:12ch}
+.hero h1 em{font-style:italic}
+.hero .sub{margin-top:1.4rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.hero .sub p{max-width:34ch;font-size:1rem;opacity:.92}
+.intro{position:fixed;inset:0;z-index:800;background:var(--navy);display:grid;place-items:center;transition:opacity 1.2s var(--ease),visibility 1.2s}
+.intro.out{opacity:0;visibility:hidden}.intro img{width:min(340px,64vw);animation:fadeup 1.2s var(--ease) both}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* watermark (Lingers) */
+.wm{position:relative;overflow:hidden}
+.wm .mark{position:absolute;left:0;top:50%;font-family:var(--serif);font-weight:300;font-size:21vw;line-height:1;letter-spacing:.04em;white-space:nowrap;text-transform:uppercase;color:rgba(75,67,53,.075);pointer-events:none;transform:translate3d(0,-50%,0);will-change:transform;user-select:none}
+.wm>*:not(.mark){position:relative;z-index:1}
+
+/* collage (Velaa "a world of its own") */
+.col{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:clamp(6rem,12vw,11rem) var(--pad)}
+.col .a{grid-column:1/6;margin-top:-2vw}.col .a .ph{aspect-ratio:4/3}
+.col .b{grid-column:9/13;margin-top:10vw}.col .b .ph{aspect-ratio:3/4}
+.col .t{grid-column:3/10;grid-row:1;align-self:end;margin-bottom:-4vw;position:relative;z-index:3;padding-top:clamp(12rem,26vw,22rem)}
+.col .t h2{font-size:clamp(2.3rem,5.6vw,6rem);line-height:.98}
+.col .t p{max-width:42ch;margin:1.4rem 0 1.6rem;opacity:.85}
+.col .ph{background:#d6d2c8}
+@media(max-width:820px){.col .a{grid-column:1/9}.col .b{grid-column:5/13;margin-top:-6vw}.col .t{grid-column:1/-1;grid-row:3;padding-top:2rem;margin-bottom:0}}
+
+/* thread: tall image + italic headline + numbered steps */
+.thread{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:0 var(--pad) clamp(6rem,11vw,10rem);align-items:center}
+.thread .im{grid-column:1/6}.thread .im .ph{aspect-ratio:4/5}
+.thread .tx{grid-column:7/13;display:grid;gap:1.6rem}
+.thread h2{font-size:clamp(2rem,4.2vw,4.4rem);line-height:1.02}
+.thread ol{display:grid}
+.thread li{display:grid;grid-template-columns:2.4rem 1fr;gap:.4rem 1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.thread li:last-child{border-bottom:1px solid var(--line)}
+.thread li i{font-style:normal;font-size:.7rem;letter-spacing:.14em;opacity:.55;padding-top:.45rem}
+.thread li h3{font-family:var(--serif);font-weight:400;font-size:1.55rem;line-height:1.1}
+.thread li p{grid-column:2;font-size:.9rem;opacity:.78;max-width:46ch}
+@media(max-width:820px){.thread .im,.thread .tx{grid-column:1/-1}}
+
+/* tables: tagged tiles */
+.tables{padding:0 var(--pad) clamp(6rem,11vw,10rem)}
+.tables header{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2rem}
+.tables h2{font-size:clamp(2.2rem,5vw,5.2rem);line-height:1}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.4vw,1.2rem)}
+.tile .ph{aspect-ratio:4/5}.tile .ph img{transition:transform 1.5s var(--ease)}.tile:hover .ph img{transform:scale(1.05)}
+.tile .tag{position:absolute;top:.8rem;left:.8rem;z-index:2;background:rgba(247,245,239,.86);color:var(--ink);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;padding:.4rem .6rem}
+.tile .ph.pos{background:#d9d5ca;display:grid;place-items:center}
+.tile .ph.pos img{width:62%;height:auto;object-fit:contain;box-shadow:0 22px 50px -20px rgba(40,34,20,.55)}
+.tile .cap{display:flex;justify-content:space-between;align-items:start;gap:1rem;padding-top:1rem}
+.tile .cap h3{font-family:var(--serif);font-weight:300;font-size:2.2rem;line-height:1;letter-spacing:-.015em}
+.tile .cap p{font-size:.84rem;opacity:.75;margin-top:.3rem}
+@media(max-width:820px){.tiles{grid-template-columns:1fr}.tile .ph{aspect-ratio:4/3}.tile .ph.pos{aspect-ratio:1}}
+
+/* the single navy band */
+.navy{background:var(--navy);color:#f1eee6;padding:clamp(5rem,10vw,9rem) var(--pad);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,7rem);align-items:start}
+.navy h2{font-size:clamp(2.6rem,6.6vw,7rem);line-height:.95}
+.navy .facts{display:grid;grid-template-columns:repeat(3,auto);gap:1rem 2.4rem;justify-content:start;margin:2rem 0 1.6rem;border-top:1px solid rgba(241,238,230,.25);padding-top:1.2rem}
+.navy .facts b{display:block;font-weight:400;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:.3rem}
+.navy .facts span{font-family:var(--serif);font-size:1.45rem;line-height:1.15}
+.navy .q{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.4rem,2.4vw,2.1rem);line-height:1.15;max-width:28ch;opacity:.95}
+.navy .body{max-width:48ch;opacity:.82;margin-top:1.4rem}
+.navy .fees{display:flex;gap:2.4rem;margin-top:1.6rem}.navy .fees b{display:block;font-family:var(--serif);font-weight:300;font-size:3rem;line-height:1}.navy .fees span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.navy .pf{display:grid;grid-template-columns:130px 1fr;gap:1.4rem;align-items:center;margin-bottom:1.6rem}
+.navy .pf img{width:130px;height:auto;box-shadow:0 16px 40px -14px rgba(0,0,0,.6)}
+.navy .wl label span{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.navy .wl input,.navy .wl select{border-bottom:1px solid rgba(241,238,230,.5);padding:.8rem 0;font-size:1rem}
+.navy .wl input::placeholder{color:#f1eee6;opacity:.4}
+.navy .wl .block{justify-self:start;margin-top:.6rem}
+.wl-ok{font-family:var(--serif);font-weight:300;font-size:2.2rem;line-height:1.05}
+@media(max-width:900px){.navy{grid-template-columns:1fr}.navy .facts{grid-template-columns:1fr 1fr}}
+
+/* quote (Velaa testimonial) */
+.quote{position:relative;height:88svh;min-height:540px;color:#f7f5ef;overflow:hidden;display:grid;align-content:end;padding:0 var(--pad) clamp(2.4rem,6vw,5rem)}
+.quote .bg{position:absolute;inset:-8% 0}.quote .bg img{width:100%;height:100%;object-fit:cover}
+.quote::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,10,.1),rgba(20,16,10,.7))}
+.quote>*:not(.bg){position:relative;z-index:2}
+.quote blockquote{margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.4vw,5.8rem);line-height:1;letter-spacing:-.02em;max-width:16ch}
+.quote blockquote em{font-style:italic}
+.quote cite{display:block;margin-top:1.2rem;font-style:normal;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+
+/* gatherings + host */
+.past{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:clamp(6rem,11vw,10rem) var(--pad) clamp(3rem,6vw,5rem)}
+.past .h{grid-column:1/5}.past .h h2{font-size:clamp(2.2rem,4.4vw,4.4rem);line-height:1}
+.past .list{grid-column:6/13;display:grid}
+.past .row{display:grid;grid-template-columns:1fr auto;gap:1rem 2rem;padding:1.6rem 0;border-top:1px solid var(--line)}
+.past .row:last-child{border-bottom:1px solid var(--line)}
+.past .row h3{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,3.4vw,3.2rem);line-height:1}
+.past .row .m{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.65;text-align:right}
+.past .row p{grid-column:1/-1;max-width:56ch;opacity:.85}
+.past .row .pl{grid-column:1/-1;font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.5rem;line-height:1.1;opacity:1}
+@media(max-width:820px){.past .h,.past .list{grid-column:1/-1}}
+.host{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:0 var(--pad) clamp(5rem,9vw,8rem);align-items:center}
+.host .im{grid-column:1/5}.host .im .ph{aspect-ratio:4/5}
+.host .tx{grid-column:6/12;display:grid;gap:1.2rem}
+.host h2{font-size:clamp(2.6rem,5.6vw,5.8rem);line-height:.95}
+.host .inv{font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.7rem;line-height:1.1}
+@media(max-width:820px){.host .im,.host .tx{grid-column:1/-1}}
+
+/* faq */
+.faqs{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;padding:0 var(--pad) clamp(6rem,10vw,9rem)}
+.faqs .h{grid-column:1/5}.faqs .h h2{font-size:clamp(2.2rem,4.4vw,4.4rem);line-height:1}.faqs .faq{grid-column:6/13}
+.faq summary{font-family:var(--serif);font-weight:400;font-size:clamp(1.25rem,1.9vw,1.7rem)}
+@media(max-width:820px){.faqs .h,.faqs .faq{grid-column:1/-1}}
+
+/* footer: numbered sitemap + watermark */
+footer{background:var(--bg);padding:clamp(3rem,6vw,5rem) var(--pad) 0;overflow:hidden;border-top:1px solid var(--line)}
+.fg{display:grid;grid-template-columns:1.2fr 1.4fr .8fr .8fr;gap:2rem;font-size:.9rem}
+.fg b{display:block;font-weight:400;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-bottom:.7rem}
+.fg ol{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 1.4rem}.fg ol li{display:flex;gap:.8rem}.fg ol small{opacity:.5;font-size:.7rem;padding-top:.15rem}
+.fg a:hover{opacity:.6}.fg p{max-width:36ch;opacity:.8}.fg{overflow-wrap:anywhere}
+.fb{display:flex;justify-content:space-between;font-size:.72rem;opacity:.6;margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line)}
+.fw{font-family:var(--serif);font-weight:300;font-size:9.7vw;line-height:.82;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;color:rgba(75,67,53,.09);margin:1.4rem 0 -1.4vw;text-align:center}
+@media(max-width:820px){.fg{grid-template-columns:1fr 1fr}.fg>div:first-child,.fg>div:nth-child(2){grid-column:1/-1}.fb{flex-direction:column;gap:.4rem}}
+
+/* sticky registration widget (Lingers) */
+.widget{position:fixed;left:var(--pad);bottom:var(--pad);z-index:90;display:grid;grid-template-columns:auto auto;background:var(--white);box-shadow:0 18px 50px -20px rgba(40,34,20,.55);transform:translateY(140%);transition:transform 1s var(--ease)}
+.is-ready .widget{transform:none}
+.widget .d{display:grid;place-content:center;text-align:center;padding:.7rem 1.1rem;border-right:1px solid var(--line);min-width:6.4rem}
+.widget .d b{font-family:var(--serif);font-weight:300;font-size:2.4rem;line-height:.9}
+.widget .d span{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.65;margin-top:.3rem}
+.widget .bt{display:grid;grid-template-rows:1fr 1fr;min-width:13rem}
+.widget .bt a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 1.2rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;transition:background .4s,color .4s}
+.widget .bt a:first-child{background:var(--taupe);color:#f7f5ef}.widget .bt a:first-child:hover{background:var(--ink)}
+.widget .bt a:last-child{background:#d9d5ca}.widget .bt a:last-child:hover{background:var(--navy);color:#f7f5ef}
+@media(max-width:620px){.widget{left:0;right:0;bottom:0;grid-template-columns:auto 1fr}.widget .d{min-width:5.2rem}body{padding-bottom:4.6rem}}
+
+/* modal skin: quiet bordered card */
+.rg{place-items:center;--rg-scrim:rgba(4,3,38,.55)}
+.rg-panel{background:var(--bg);color:var(--ink);width:min(520px,calc(100vw - 1.6rem));padding:clamp(1.8rem,4vw,3rem);border:1px solid rgba(75,67,53,.3);outline:8px solid var(--bg);transform:translateY(24px)}
+.rg-x{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+.rg-eyebrow{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+.rg-panel h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5vw,3.6rem);line-height:.98;letter-spacing:-.02em;margin:.6rem 0 1rem}
+.rg-sub{opacity:.8;margin-bottom:1.2rem}
+.rg .wl label span{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;opacity:.65}
+.rg .wl input,.rg .wl select{border-bottom:1px solid var(--ink);padding:.7rem 0}
+.rg-go{justify-self:start;background:var(--taupe);color:#f7f5ef;padding:1rem 1.6rem;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.rg .wl small{font-size:.72rem}
+</style>
+</head>
+<body>
+<div class="intro" aria-hidden="true"><img src="img/logo/wordmark-white.png" alt=""></div>
+
+<header class="nav" id="nav">
+  <div class="l"><button id="openMenu" aria-haspopup="dialog"><i><b></b><b></b></i>Menu</button><span class="sep"></span><a href="#tables">The tables</a><a href="#lagos">Lagos</a><a href="#faq">Questions</a></div>
+  <a class="c" href="#top" aria-label="The Wealth Table, home"><img class="a" src="img/logo/wordmark-white.png" alt="The Wealth Table"><img class="b" src="img/logo/wordmark-brown.png" alt=""></a>
+  <div class="r"><span>EN</span><a class="reg" href="#lagos" data-register>Register interest</a></div>
+</header>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="x" id="closeMenu">Close</button>
+  <ol><li><a href="#about"><small>01</small>About</a></li><li><a href="#tables"><small>02</small>The tables</a></li><li><a href="#lagos"><small>03</small>Lagos 2026</a></li><li><a href="#past"><small>04</small>Gatherings</a></li><li><a href="#host"><small>05</small>The host</a></li><li><a href="#faq"><small>06</small>Questions</a></li><li><a href="#lagos" data-register><small>07</small>Register your interest</a></li></ol>
+  <div class="side"><img src="img/logo/lockup-full-brown.png" alt="The Wealth Table" style="width:210px;height:auto"><div><b>Email</b><a href="mailto:info@thewealthtableglobal.com">info@thewealthtableglobal.com</a></div><div><b>Phone</b>+234 8096000049</div><div><b>Office</b>10, Onisiwo Road, Ikoyi, Lagos</div></div>
+</div>
+
+<aside class="widget" aria-label="Register your interest">
+  <div class="d"><b>21</b><span>Nov · Lagos</span></div>
+  <div class="bt"><a href="#lagos" data-register data-table="Lagos"><span>Register interest</span><span aria-hidden="true">→</span></a><a href="#lagos"><span>Event details</span><span aria-hidden="true">↓</span></a></div>
+</aside>
+
+<main id="top">
+  <section class="hero">
+    <div class="bg"><img src="img/photos/a-6762.jpg" alt="Guests applauding at a long candlelit table in Accra"></div>
+    <h1><span class="mask"><span style="--d:300">Leave richer</span></span><span class="mask"><span style="--d:440">than you <em>arrived.</em></span></span></h1>
+    <div class="sub"><p><span class="mask"><span style="--d:760">An invitation-only gathering of women building, investing and owning.</span></span></p><a class="block light" href="#lagos" data-register data-table="Lagos">Register your interest <span aria-hidden="true">→</span></a></div>
+  </section>
+
+  <div class="wm" id="wm">
+    <div class="mark" id="mark" aria-hidden="true">The Wealth Table · The Wealth Table</div>
+    <section class="col" id="about">
+      <figure class="a" data-par="0.05"><div class="ph veil"><img src="img/photos/n-10880.jpg" alt="A speaker at the Nairobi table beneath The Wealth Table backdrop" loading="lazy" style="object-position:50% 40%"></div></figure>
+      <div class="t">
+        <h2 class="ser" data-reveal>Where women bring <em>more than their stories</em> to the table.</h2>
+        <p data-reveal style="--d:120">The businesses they’re building, the investments they’re exploring, the opportunities they’re pursuing, and the connections they need to make their next move.</p>
+        <a class="lnk" href="#tables" data-reveal style="--d:200"><i>→</i>Find your table</a>
+      </div>
+      <figure class="b" data-par="-0.05"><div class="ph veil"><img src="img/photos/a-6823.jpg" alt="A guest speaking animatedly in Accra" loading="lazy" style="object-position:50% 25%"></div></figure>
+    </section>
+
+    <section class="thread" id="how">
+      <div class="im"><div class="ph veil"><img src="img/photos/n-10863.jpg" alt="Women seated along a long white-floral table in Nairobi" loading="lazy" style="object-position:30% 50%"></div></div>
+      <div class="tx">
+        <h2 class="ser" data-reveal>Invitations are released <em>in waves,</em> to the list before anyone else.</h2>
+        <ol id="steps"></ol>
+        <a class="block" href="#lagos" data-register style="justify-self:start">Register your interest <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </div>
+
+  <section class="tables" id="tables">
+    <header><h2 class="ser" data-reveal>A seat at <em>three tables.</em></h2><p class="tiny">Lagos · Accra · Nairobi</p></header>
+    <div class="tiles">
+      <a class="tile" href="#lagos" data-reveal><div class="ph pos"><span class="tag">Next</span><img src="img/photos/poster.jpg" alt="The Wealth Table Lagos invitation" loading="lazy" width="426" height="640"></div><div class="cap"><div><h3>Lagos</h3><p>Sat 21 November 2026 · Civic Centre, VI</p></div><span class="lnk"><i>→</i></span></div></a>
+      <a class="tile" href="#past" data-reveal style="--d:100"><div class="ph"><span class="tag">Held</span><img src="img/photos/a-6917.jpg" alt="Three guests chatting by the buffet in Accra" loading="lazy" style="object-position:30% 50%"></div><div class="cap"><div><h3>Accra</h3><p>3 October 2026 · Cantonments</p></div><span class="lnk"><i>→</i></span></div></a>
+      <a class="tile" href="#past" data-reveal style="--d:200"><div class="ph"><span class="tag">Held</span><img src="img/photos/n-10817.jpg" alt="Two guests greeting each other in Nairobi" loading="lazy" style="object-position:36% 50%"></div><div class="cap"><div><h3>Nairobi</h3><p>13 June 2026 · Kwetu Nairobi</p></div><span class="lnk"><i>→</i></span></div></a>
+    </div>
+  </section>
+
+  <section class="navy" id="lagos">
+    <div>
+      <p class="tiny" style="opacity:.7;margin-bottom:1.2rem">The Wealth Table Conference</p>
+      <h2 class="ser" data-reveal>Your seat is <em>waiting.</em></h2>
+      <div class="facts"><div><b>Date</b><span id="lDate"></span></div><div><b>Time</b><span id="lTime"></span></div><div><b>Venue</b><span id="lVenue"></span></div></div>
+      <p class="q" id="lQ"></p>
+      <p class="body" id="lBody"></p>
+      <div class="fees"><div><b id="fRcc"></b><span>RCC members</span></div><div><b id="fNon"></b><span>Non-members</span></div></div>
+    </div>
+    <div>
+      <div class="pf"><img src="img/photos/poster.jpg" alt="The Wealth Table Lagos invitation" loading="lazy" width="130" height="195"><p class="tiny" style="opacity:.75;line-height:1.7">By invitation and approved registration.<br>Connection · Opportunity · Collaboration</p></div>
+      <form class="wl" data-waitlist>
+        <label><span>Email</span><input type="email" required autocomplete="email" placeholder="you@email.com"></label>
+        <label><span>First name</span><input type="text" required autocomplete="given-name" placeholder="First name"></label>
+        <label><span>Preferred table</span><select required></select></label>
+        <button class="block light" type="submit">Register your interest <span aria-hidden="true">→</span></button>
+        <small id="consent"></small><p class="demo-note">Concept preview: this form does not send data.</p>
+      </form>
+      <p class="wl-ok" hidden>Thank you. You are on the list.</p>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="bg"><img data-par="0.08" src="img/photos/n-10844.jpg" alt="A speaker addressing the room in Nairobi" loading="lazy"></div>
+    <blockquote data-reveal>The word of the day was <em>Courage.</em></blockquote>
+    <cite>Nairobi · 13 June 2026 · 24 women</cite>
+  </section>
+
+  <section class="past" id="past">
+    <div class="h"><p class="tiny" style="opacity:.6;margin-bottom:1rem">Where we have been</p><h2 class="ser" data-reveal>Where the conversation <em>continued.</em></h2></div>
+    <div class="list" id="pastList"></div>
+  </section>
+
+  <section class="host" id="host">
+    <div class="im"><div class="ph veil"><img src="img/photos/n-10849.jpg" alt="A guest listening at the Nairobi table" loading="lazy" style="object-position:40% 30%"></div></div>
+    <div class="tx">
+      <p class="tiny" style="opacity:.6">About the host</p>
+      <h2 class="ser">Udo <em>Okonjo</em></h2>
+      <p id="fOne"></p><p id="fTwo"></p><p class="inv" id="fInv"></p>
+      <div style="display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center"><a class="block" href="#lagos" data-register>Register your interest <span aria-hidden="true">→</span></a><a class="lnk" href="https://rcc.africa/" target="_blank" rel="noopener"><i>↗</i>Radiant Collective Capital</a></div>
+    </div>
+  </section>
+
+  <section class="faqs" id="faq"><div class="h"><p class="tiny" style="opacity:.6;margin-bottom:1rem">Frequently asked questions</p><h2 class="ser">Good to <em>know.</em></h2></div><div class="faq" id="faqList"></div></section>
+</main>
+
+<footer>
+  <div class="fg">
+    <div><img src="img/logo/lockup-full-brown.png" alt="The Wealth Table. Leave richer than you arrived." style="width:190px;height:auto;margin-bottom:1rem"><p id="fLine"></p></div>
+    <div><b>Sitemap</b><ol><li><small>01</small><a href="#about">About</a></li><li><small>04</small><a href="#past">Gatherings</a></li><li><small>02</small><a href="#tables">The tables</a></li><li><small>05</small><a href="#host">The host</a></li><li><small>03</small><a href="#lagos">Lagos 2026</a></li><li><small>06</small><a href="#faq">Questions</a></li></ol></div>
+    <div><b>Contact</b><a href="mailto:info@thewealthtableglobal.com">info@thewealthtableglobal.com</a><br>+234 8096000049<br>10, Onisiwo Road, Ikoyi, Lagos</div>
+    <div><b>Socials</b><a href="https://ng.linkedin.com/in/udomaryanneokonjo" target="_blank" rel="noopener">LinkedIn</a><br><a href="https://www.instagram.com/udo_okonjo" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="fb"><span>© 2026 The Wealth Table Global. All rights reserved.</span><span>Concept 4 · after Velaa + Lingers</span></div>
+  <div class="fw" aria-hidden="true">The Wealth Table</div>
+</footer>
+
+<nav class="switcher" aria-label="Concepts"><a href="index.html" title="All concepts">⌂</a><a href="c1-warm.html" title="Concept 1">1</a><a href="c2-quiet.html" title="Concept 2">2</a><a href="c3-sand.html" title="Concept 3">3</a><a href="c4-resort.html" title="Concept 4">4</a></nav>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+const W=WT,L=W.lagos;
+$('#steps').innerHTML=W.steps.map((s,i)=>`<li data-reveal style="--d:${i*70}"><i>0${i+1}</i><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join('');
+$('#lDate').textContent=L.date;$('#lTime').textContent=L.time;$('#lVenue').textContent=L.venue;$('#lQ').textContent=L.question;$('#lBody').innerHTML=L.kicker+' '+L.body.replace(/ to explore one defining question:$/,'.');$('#fRcc').textContent=L.fee.rcc;$('#fNon').textContent=L.fee.non;
+const row=(c,ap)=>`<div class="row" data-reveal><h3>${c.city}</h3><div class="m">${c.date}<br>${ap?'≈ ':''}${c.women} women</div><p>${c.body[0]}</p><p class="pl">${c.pull}</p></div>`;
+$('#pastList').innerHTML=row(W.accra,1)+row(W.nairobi,0);
+$('#fOne').textContent=W.founder.body[1];$('#fTwo').textContent=W.founder.body[2];$('#fInv').textContent=W.founder.invitation;
+$('#faqList').innerHTML=W.faq.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('');
+$('#consent').textContent=W.consent;$('#fLine').textContent=W.footerLine;
+WTinit();
+const nav=$('#nav'),onS=()=>nav.classList.toggle('solid',scrollY>innerHeight*.8);addEventListener('scroll',onS,{passive:true});onS();
+/* watermark drifts sideways as you scroll (Lingers) */
+const wm=$('#wm'),mark=$('#mark');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const mv=()=>{const r=wm.getBoundingClientRect(),p=(innerHeight-r.top)/(innerHeight+r.height);mark.style.transform=`translate3d(${(-8-p*45).toFixed(1)}%,-50%,0)`};addEventListener('scroll',mv,{passive:true});mv()}
+const dr=$('#drawer'),setM=o=>{dr.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''};
+$('#openMenu').onclick=()=>setM(1);$('#closeMenu').onclick=()=>setM(0);$$('#drawer a').forEach(a=>a.addEventListener('click',()=>setM(0)));addEventListener('keydown',e=>{if(e.key==='Escape')setM(0)});
+</script>
+</body>
+</html>

@@ -1,17 +1,13 @@
-# The Wealth Table: website concepts
+# The Wealth Table: website concepts (round 2)
 
-Round 1: four standalone landing-page concepts built from the current site's real content, following `docs/CONCEPT_PLAYBOOK.md`.
+Open `concepts/index.html` (double-click works) to compare the four concepts:
 
-Open `concepts/index.html` (any static server, or double-click the file) to compare:
-
-| File | Concept | Main references |
+| File | Concept | References |
 |---|---|---|
-| `concepts/table.html` | 1 · Warm Editorial | Mejuma Tuscany, La Caminera |
-| `concepts/gallery.html` | 2 · Quiet Gallery | Jakobsen Copenhagen, La Caminera |
-| `concepts/bar.html` | 3 · Floating Bar (Ballena nav) | Ballena Cabo, La Caminera |
-| `concepts/noir.html` | 4 · Dark Serif | Tengile MalaMala, La Caminera |
+| `concepts/c1-warm.html` | Warm Greige | Mejuma Tuscany |
+| `concepts/c2-quiet.html` | Quiet Gallery | Jakobsen Copenhagen |
+| `concepts/c3-sand.html` | Sand & Olive (floating bar) | Ballena Cabo, Tengile MalaMala |
+| `concepts/c4-resort.html` | Private Island Calm | Velaa Private Island, Lingers |
 
-Shared layer: `concepts/data.js` (all content), `common.js`, `common.css`, `fonts/` (self-hosted), `img/`.
-
-Docs: `docs/SITE_EXTRACTION.md` (everything taken from the live site, plus issues found), `docs/REFERENCE_INGREDIENTS.md` (what was learned from each reference), `docs/CONCEPT_PLAYBOOK.md` (the master instructions).
-Logos split out of the nav/footer art are in `concepts/img/logo/` (WT monogram, wordmark, tagline; cream and ink versions).
+Shared: `concepts/data.js` (all real content), `common.js` (registration modal, reveals, parallax), `common.css`, `fonts/`, `img/`.
+Docs: `docs/ROUND2_NOTES.md`, `docs/SITE_EXTRACTION.md`, `docs/REFERENCE_INGREDIENTS.md`, `docs/CONCEPT_PLAYBOOK.md`.

@@ -51,3 +51,8 @@ Rendered with Playwright/Chromium at 1440×900 and scrolled through. We borrow i
 | Jakobsen | Single-family light type at giant size, centred logo nav, asymmetric parallax image columns, index list with image swap | Concept 2 |
 | Tengile | Caps serif hero with indented second line, scattered image cloud, olive footer, "ENQUIRE / MENU" nav, large soft statements | Concept 4 |
 | La Caminera | Docked booking bar (reused as the waitlist bar), hairline outline CTAs, centred classic serif calm | Concepts 3 and 4 |
+
+## Added in round 2
+**Velaa Private Island:** Canela-style thin serif with italic emphasis words; greige `#e8e6df` with deep navy `#040326` bands; translucent "BOOK NOW" block in a quiet top bar; overlapping image collage with text between the pictures; tagged tiles; full-bleed testimonial; numbered sitemap footer; Instrument Sans for small text.
+**Lingers Suites (lingers.it/en):** Cormorant Garamond + Cinzel capitals; huge pale "LINGERS" watermark behind content; sticky bottom-left widget with two date blocks and stacked ENQUIRE / BOOK buttons; scroll-snap galleries; taupe `#77715f`.
+See `ROUND2_NOTES.md` for how every reference maps to a concept.
