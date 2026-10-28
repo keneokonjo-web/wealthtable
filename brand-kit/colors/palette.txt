@@ -1,0 +1,8 @@
+Sand         #F8F2E5  RGB (248, 242, 229)  CMYK~(0, 2, 8, 3)  Primary background
+Olive        #4F5B2A  RGB (79, 91, 42)  CMYK~(13, 0, 54, 64)  Primary brand colour
+Terracotta   #8F4B38  RGB (143, 75, 56)  CMYK~(0, 48, 61, 44)  Primary brand colour
+Deep Olive   #373F1D  RGB (55, 63, 29)  CMYK~(13, 0, 54, 75)  Text and depth
+Blush        #F5EEE9  RGB (245, 238, 233)  CMYK~(0, 3, 5, 4)  Soft background
+Stone        #E3E1D4  RGB (227, 225, 212)  CMYK~(0, 1, 7, 11)  Neutral background
+Ink          #262A1A  RGB (38, 42, 26)  CMYK~(10, 0, 38, 84)  Body text
+Gold         #B8923A  RGB (184, 146, 58)  CMYK~(0, 21, 68, 28)  Hairline accent only

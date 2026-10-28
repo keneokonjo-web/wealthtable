@@ -1,0 +1,2 @@
+Fonts in this folder are open source under the SIL Open Font License 1.1 (Google Fonts):
+Lexend Zetta, Bodoni Moda, Hanken Grotesk, Antonio. https://openfontlicense.org
