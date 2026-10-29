@@ -59,7 +59,8 @@ def head(title, desc, canon, og_img, extra_head='', loading=False):
 <meta name="description" content="{E(desc)}">
 <meta name="theme-color" content="#8f4b38">
 <link rel="apple-touch-icon" href="{'' if canon == 'home' else '../../'}assets/img/apple-touch-icon.png">
-<link rel="icon" href="{'' if canon == 'home' else '../../'}assets/img/logo/wt-monogram-olive.png">
+<link rel="icon" type="image/png" href="{'' if canon == 'home' else '../../'}assets/img/favicon-white.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="{'' if canon == 'home' else '../../'}assets/img/favicon-dark.png" media="(prefers-color-scheme: light)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
@@ -151,6 +152,15 @@ def recap(c, rev):
       </article>'''
 
 
+def hero_video():
+    """Adds the hero video when assets/video/hero.mp4 exists (drop the file in and rebuild)."""
+    if not os.path.exists(os.path.join(ROOT, 'assets/video/hero.mp4')):
+        return ''
+    webm = '<source src="assets/video/hero.webm" type="video/webm">' if os.path.exists(os.path.join(ROOT, 'assets/video/hero.webm')) else ''
+    return ('<video class="hero-video" muted playsinline loop preload="auto" aria-hidden="true" tabindex="-1" poster="assets/img/photos/a-6797.jpg">'
+            + webm + '<source src="assets/video/hero.mp4" type="video/mp4"></video>')
+
+
 def build_home():
     L = W['lagos']
     cloud = ['n-10840', 'a-6618', 'n-10817', 'a-6949', 'n-10816', 'a-6626', 'a-6917']
@@ -173,7 +183,7 @@ def build_home():
     out += '<body>\n<a class="skip" href="#about">Skip to content</a>\n' + PRELOAD + nav_html('', True) + menu_html('', True)
     out += f'''<main id="top">
   <section class="hero" data-nb="rgba(3,9,13,.19)" data-fg="cream">
-    <div class="bgi">{img('a-6797', lazy=False, style='object-position:50% 55%')}</div>
+    <div class="bgi">{img('a-6797', lazy=False, style='object-position:50% 55%')}{hero_video()}</div>
     <h1><span class="mask"><span style="--d:300">Leave richer</span></span><span class="mask"><span style="--d:440">than you arrived.</span></span></h1>
     <p class="sub"><span class="mask"><span style="--d:760">An invitation-only gathering of women building, investing and owning.</span></span></p>
     <a class="dock" href="#" data-luma aria-label="Register your interest for The Wealth Table Lagos">
@@ -188,7 +198,7 @@ def build_home():
       <div class="r" data-reveal style="--d:120"><p>The Wealth Table is a purposefully designed gathering where women connect around real opportunities, shared ambitions, and the future of wealth and ownership.</p><a class="btn" href="#faq" style="justify-self:start">What to expect <i>→</i></a></div>
     </div>
     <div class="cards" id="tables">
-      <a class="tcard solid" href="#lagos" data-reveal><span class="tag">Next · 21 Nov 2026</span><span class="chip">{flag('ng')}</span><span class="big">Lagos</span><div class="b"><span>Civic Centre, VI Lagos</span><span>Details <i>+</i></span></div></a>
+      <a class="tcard solid" href="#lagos" data-reveal><span class="tag">Next · 21 Nov 2026</span><span class="big">Lagos</span><div class="b"><span>Civic Centre, VI Lagos</span><span>Details <i>+</i></span></div></a>
       <a class="tcard" href="#gatherings" data-reveal style="--d:100">{img('a-6823', small=True, style='object-position:50% 25%')}<span class="chip">{flag('gh')}</span><h3>Accra</h3><div class="b"><span>3 October 2026<br>Cantonments, Ghana</span><span>Explore <i>+</i></span></div></a>
       <a class="tcard" href="#gatherings" data-reveal style="--d:200">{img('n-10857', small=True, style='object-position:36% 40%')}<span class="chip">{flag('ke')}</span><h3>Nairobi</h3><div class="b"><span>13 June 2026<br>Kwetu Nairobi, Kenya</span><span>Explore <i>+</i></span></div></a>
     </div>
@@ -199,7 +209,7 @@ def build_home():
       <div class="tx">
         <p class="tag">The Wealth Table Conference</p>
         <h2 class="H" data-reveal>The Wealth Table™<br>Lagos</h2>
-        <div class="facts"><div><b>Date</b><span>{E(L['date'])}</span></div><div><b>Time</b><span>{E(L['time'])}</span></div><div><b>Venue</b><span class="loc">{flag('ng')} {E(L['venue'])}</span></div></div>
+        <div class="facts"><div><b>Date</b><span>{E(L['date'])}</span></div><div><b>Time</b><span>{E(L['time'])}</span></div><div><b>Venue</b><span>{E(L['venue'])}</span></div></div>
         <p style="max-width:54ch;opacity:.92"><b style="font-weight:500">{E(L['kicker'])}</b> {E(L['body'])}</p>
         <p class="q">{E(L['question'])}</p>
         <div class="fees"><div>RCC members<b>{E(L['fee']['rcc'])}</b></div><div>Non-members<b>{E(L['fee']['non'])}</b></div></div>

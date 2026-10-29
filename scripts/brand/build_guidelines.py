@@ -54,7 +54,7 @@ def im(src, style=''): return f'<img src="{src}" style="{style}">'
 
 slides = []
 # 1 cover
-slides.append(f'''<div class="slide olive"><div style="position:absolute;inset:0;background:url(art/ripple-olive.png) center/cover;opacity:.9"></div>
+slides.append(f'''<div class="slide olive"><div style="position:absolute;inset:0;background:url(art/png/pattern-adire-ink-sand.png) center/cover;opacity:.18"></div>
   <div style="position:relative;height:100%;display:grid;place-items:center;text-align:center"><div>{im(LG + 'primary-stacked-sand.png', 'width:560px;margin:0 auto')}<div class="k" style="margin-top:56px;color:{C['sand']}">Brand guidelines · Version 1.0 · October 2026</div></div></div></div>''')
 # 2 story
 slides.append(f'''<div class="slide"><div class="k">01 · Brand story</div><h1 style="margin-top:20px">Leave richer<br>than you <em>arrived.</em></h1><div class="hair" style="width:120px"></div>
@@ -104,11 +104,11 @@ slides.append(f'''<div class="slide"><div class="k">07 · Iconography</div><h2>F
   <div class="grid" style="grid-template-columns:repeat(6,1fr);gap:18px">{''.join(f'<div class="cell" style="height:190px">{im("icons/png/" + n + ".png", "width:96px")}<small>{n}</small></div>' for n in ics)}</div>
   <p style="margin-top:24px;font-size:17px;max-width:1200px">48 px grid, 1.6 px stroke, round caps and joins, no fills (except seat dots). Use olive or ink on light backgrounds and sand on dark. SVG and PNG supplied.</p><div class="num">08</div></div>''')
 # 9 art
-slides.append(f'''<div class="slide"><div class="k">08 · Art and patterns</div><h2>The table, <em>seen from above.</em></h2>
+P = lambda n: f'<div style="background:url(art/png/{n}.png) center/cover;border:1px solid rgba(38,42,26,.15)"></div>'
+slides.append(f'''<div class="slide"><div class="k">08 · Art and patterns</div><h2>Woven, not <em>shouted.</em></h2>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);grid-template-rows:260px 260px;gap:16px">
-   <div style="background:url(art/ripple-olive.png) center/cover"></div><div style="background:url(art/seats-large-sand.png) center/cover;border:1px solid rgba(38,42,26,.15)"></div><div style="background:url(art/pattern-monogram-terracotta.png) center/cover"></div>
-   <div style="background:url(art/pattern-seats-olive.png) center/cover"></div><div style="background:url(art/ripple-sand.png) center/cover;border:1px solid rgba(38,42,26,.15)"></div><div style="background:url(art/ripple-terracotta.png) center/cover"></div></div>
-  <p style="margin-top:20px;font-size:17px;max-width:1300px">The brand device is a round table: concentric ripples of conversation and seats around a ring. Use ripples as quiet backgrounds in gold or tonal hairlines; use seats as a pattern or avatar. Keep opacity low behind text.</p><div class="num">09</div></div>''')
+   {P('pattern-kente-ivory-burgundy')}{P('pattern-adire-sand-terracotta')}{P('pattern-mudcloth-burgundy-gold')}{P('pattern-beadwork-ivory-burgundy')}{P('pattern-chain-ink-sand')}{P('border-strip-burgundy-gold')}</div>
+  <p style="margin-top:20px;font-size:17px;max-width:1300px">Five original patterns inspired by West and East African textile traditions: kente weave, adire circles, mud-cloth marks, beadwork triangles and a diamond chain for unity. Thin lines, tonal colour. Use them as quiet borders and backgrounds, never over faces or behind body text. SVG tiles and PNG previews supplied in four colourways.</p><div class="num">09</div></div>''')
 # 10 photography
 ph = ['n-10863', 'a-6823', 'n-10816', 'a-6565']
 slides.append(f'''<div class="slide"><div class="k">09 · Photography</div><h2>Warm, candid, <em>documentary.</em></h2>
@@ -123,7 +123,7 @@ slides.append(f'''<div class="slide"><div class="k">10 · Social</div><h2>Consis
   <p style="margin-top:22px;font-size:17px;max-width:1300px">Templates: Instagram posts 1080×1350, stories 1080×1920, highlight covers, LinkedIn 1200×627, banners 1584×396 and 1128×191, and a five-slide carousel. One idea per graphic, one italic word, always the URL.</p><div class="num">11</div></div>''')
 # 12 posters
 slides.append(f'''<div class="slide terra"><div class="k">11 · Posters</div><h2 style="color:{C['sand']}">Invitation and <em>remembrance.</em></h2>
-  <div style="display:flex;gap:34px;align-items:flex-start"><img src="posters/poster-lagos-invitation.png" style="height:640px;width:auto"><img src="posters/poster-accra-recap.png" style="height:640px;width:auto"><img src="posters/poster-nairobi-recap.png" style="height:640px;width:auto"><p style="font-size:17px;max-width:250px">Sand background, gold double frame, ripple device. Bodoni headline with one italic word, Lexend labels, an olive base panel. Posters are 2:3, supplied as PNG and PDF.</p></div><div class="num">12</div></div>''')
+  <div style="display:flex;gap:34px;align-items:flex-start"><img src="posters/poster-lagos-invitation.png" style="height:640px;width:auto"><img src="posters/poster-lagos-photo.png" style="height:640px;width:auto"><img src="posters/poster-accra-recap.png" style="height:640px;width:auto"><p style="font-size:17px;max-width:250px">Ivory background, embossed wordmark, gold rules and a deep burgundy base band with a woven border. Two Lagos versions (typographic and photo) plus Accra and Nairobi recaps. 2:3, PNG and PDF.</p></div><div class="num">12</div></div>''')
 # 13 voice
 slides.append(f'''<div class="slide"><div class="k">12 · Voice</div><h2>Warm, assured, <em>specific.</em></h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px"><div><div class="k" style="color:{C['olive']};margin-bottom:10px">We say</div>
@@ -133,8 +133,8 @@ slides.append(f'''<div class="slide"><div class="k">12 · Voice</div><h2>Warm, a
 slides.append(f'''<div class="slide olive"><div class="k">13 · File index</div><h2 style="color:{C['sand']}">What is <em>in the kit.</em></h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 70px;font-size:20px">
    <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">logos/</b>SVG + PNG, 7 marks × 5 colours</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">icons/</b>12 icons, SVG + PNG</div>
-   <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">avatars/</b>8 profile images, 1080 px</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">art/</b>Ripples, seats, patterns</div>
-   <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">fonts/</b>Lexend Zetta, Bodoni Moda, Hanken Grotesk, Antonio</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">posters/</b>Lagos, Accra, Nairobi (PNG + PDF)</div>
+   <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">avatars/</b>8 profile images, 1080 px</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">art/</b>African-inspired patterns</div>
+   <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">fonts/</b>Lexend Zetta, Bodoni Moda, Hanken Grotesk, Antonio</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">posters/</b>Lagos x2, Accra, Nairobi (PNG + PDF)</div>
    <div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">social/</b>Instagram, stories, highlights, LinkedIn, carousel</div><div class="li" style="border-color:rgba(248,242,229,.35)"><b style="color:{C['gold']}">colors/</b>Swatches, CSS variables</div></div>
   <p style="margin-top:40px;color:{C['sand']};opacity:.9">Questions: info@thewealthtableglobal.com · +234 8096000049 · 10, Onisiwo Road, Ikoyi, Lagos</p><div class="num">14</div></div>''')
 

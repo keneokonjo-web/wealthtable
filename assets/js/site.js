@@ -6,20 +6,14 @@
   const root = document.documentElement;
   const cfg = window.WT_CONFIG || {};
 
-  /* ---- Register buttons -> Luma ---- */
+  /* ---- Register buttons -> Luma (plain link, opens in a new tab) ---- */
   function luma() {
-    const links = $$('[data-luma]');
     const url = (cfg.LUMA_URL || '').trim();
     const fallback = 'mailto:info@thewealthtableglobal.com?subject=' + encodeURIComponent('Register my interest: The Wealth Table');
-    links.forEach(a => {
+    $$('[data-luma]').forEach(a => {
       a.href = url || fallback;
       if (url) { a.target = '_blank'; a.rel = 'noopener'; }
     });
-    const id = (cfg.LUMA_EVENT_ID || '').trim();
-    if (url && id) {
-      links.forEach(a => { a.classList.add('luma-checkout--button'); a.setAttribute('data-luma-action', 'checkout'); a.setAttribute('data-luma-event-id', id); });
-      const s = document.createElement('script'); s.id = 'luma-checkout'; s.src = 'https://embed.lu.ma/checkout-button.js'; document.body.appendChild(s);
-    }
   }
 
   /* ---- scroll reveal (hero is driven by the load-up animation instead) ---- */
@@ -92,10 +86,18 @@
     addEventListener('scroll', run, { passive: true }); run();
   }
 
+  /* ---- hero video: starts right after the load-up animation, fades in over the photo ---- */
+  function heroVideo() {
+    const v = $('.hero-video'); if (!v || reduce) return;
+    if (navigator.connection && navigator.connection.saveData) return;
+    const go = () => { const p = v.play(); if (p && p.then) p.then(() => v.classList.add('on')).catch(() => {}); };
+    if (v.readyState >= 3) go(); else { v.addEventListener('canplay', go, { once: true }); v.load(); }
+  }
+
   /* ---- load-up animation ---- */
   function preload() {
     const pre = $('.pre');
-    const done = () => { root.classList.remove('is-loading'); root.classList.add('is-loaded'); };
+    const done = () => { root.classList.remove('is-loading'); root.classList.add('is-loaded'); heroVideo(); };
     if (!pre || reduce) { if (pre) pre.remove(); done(); return; }
     const countEl = $('.count', pre), bar = $('.bar', pre);
     const MIN = 2900, t0 = performance.now();

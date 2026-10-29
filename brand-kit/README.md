@@ -7,10 +7,10 @@ Open `Wealth-Table-Brand-Guidelines.pdf` first (also as `.html`).
 | `logos/svg`, `logos/png` | 7 marks (primary stacked, horizontal, wordmark, monogram, seal, table mark, monogram ring) in 5 colours. SVG files are true vector (traced from the supplied logo). |
 | `icons/` | 12 line icons, SVG + PNG |
 | `avatars/` | 8 profile images, 1080 px (safe for circle crop) |
-| `art/` | Ripple and seat backgrounds (3000×2000 PNG + SVG) and tileable patterns |
+| `art/` | African-inspired patterns (kente, adire, mud-cloth, beadwork, chain) in 4 colourways: `svg-tiles/` (tileable SVG), `png/` previews, `overview.png`, plus woven border strips |
 | `fonts/` | Lexend Zetta, Bodoni Moda, Hanken Grotesk, Antonio (TTF, SIL Open Font License) |
 | `colors/` | `colors.css`, `palette.txt`, `swatches.png` |
-| `posters/` | Lagos invitation (3600×5400 PNG + PDF), Accra and Nairobi recap posters (PNG + PDF) |
+| `posters/` | Lagos invitation (typographic) and Lagos photo poster (no other cities mentioned), plus Accra and Nairobi recap posters (PNG + PDF) |
 | `social/` | Instagram posts (14), stories (4), highlight covers (6), LinkedIn posts (6) and banners (2), 5-slide carousel |
 
 ## Notes
