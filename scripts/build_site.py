@@ -2,6 +2,7 @@
 """Generates index.html and the two gallery pages from scripts/content.json.
 Run from the repo root:  python3 scripts/build_site.py
 Static output is committed so Vercel needs no build step."""
+import hashlib
 import json, html, os
 from PIL import Image
 
@@ -34,6 +35,13 @@ def img(name, alt=None, small=False, lazy=True, cls='', style='', prefix='assets
     return (f'<img src="{prefix}{name}{"-sm" if small else ""}.jpg" alt="{a}" width="{w}" height="{h}"'
             f'{" loading=\"lazy\" decoding=\"async\"" if lazy else " fetchpriority=\"high\""}'
             f'{f" class=\"{cls}\"" if cls else ""}{f" style=\"{style}\"" if style else ""}>')
+
+
+def ver(*files):
+    h = hashlib.md5()
+    for f in files:
+        h.update(open(os.path.join(ROOT, f), 'rb').read())
+    return h.hexdigest()[:8]
 
 
 def flag(code, big=False, prefix='assets/img/flags/'):
@@ -70,7 +78,7 @@ def head(title, desc, canon, og_img, extra_head='', loading=False):
 
 
 def css_links(pre):
-    return (f'<link rel="stylesheet" href="{pre}assets/fonts/fonts.css">\n<link rel="stylesheet" href="{pre}assets/css/base.css">\n<link rel="stylesheet" href="{pre}assets/css/site.css">\n</head>\n')
+    return (f'<link rel="stylesheet" href="{pre}assets/fonts/fonts.css">\n<link rel="stylesheet" href="{pre}assets/css/base.css?v={ver("assets/css/base.css")}">\n<link rel="stylesheet" href="{pre}assets/css/site.css?v={ver("assets/css/site.css")}">\n</head>\n')
 
 
 def menu_html(pre, home):
@@ -115,7 +123,7 @@ def footer_html(pre, home):
 
 
 def scripts(pre):
-    return f'<script src="{pre}assets/js/config.js"></script>\n<script src="{pre}assets/js/site.js" defer></script>\n</body>\n</html>\n'
+    return f'<script src="{pre}assets/js/config.js?v={ver("assets/js/config.js")}"></script>\n<script src="{pre}assets/js/site.js?v={ver("assets/js/site.js")}" defer></script>\n</body>\n</html>\n'
 
 
 PRELOAD = '''<div class="pre" aria-hidden="true">
@@ -198,7 +206,7 @@ def build_home():
       <div class="r" data-reveal style="--d:120"><p>The Wealth Table is a purposefully designed gathering where women connect around real opportunities, shared ambitions, and the future of wealth and ownership.</p><a class="btn" href="#faq" style="justify-self:start">What to expect <i>→</i></a></div>
     </div>
     <div class="cards" id="tables">
-      <a class="tcard solid" href="#lagos" data-reveal><span class="tag">Next · 21 Nov 2026</span><span class="big">Lagos</span><div class="b"><span>Civic Centre, VI Lagos</span><span>Details <i>+</i></span></div></a>
+      <a class="tcard solid" href="#lagos" data-reveal><span class="chip">{flag('ng')}</span><span class="tag">Next · 21 Nov 2026</span><span class="big">Lagos</span><div class="b"><span>Civic Centre, VI Lagos</span><span>Details <i>+</i></span></div></a>
       <a class="tcard" href="#gatherings" data-reveal style="--d:100">{img('a-6823', small=True, style='object-position:50% 25%')}<span class="chip">{flag('gh')}</span><h3>Accra</h3><div class="b"><span>3 October 2026<br>Cantonments, Ghana</span><span>Explore <i>+</i></span></div></a>
       <a class="tcard" href="#gatherings" data-reveal style="--d:200">{img('n-10857', small=True, style='object-position:36% 40%')}<span class="chip">{flag('ke')}</span><h3>Nairobi</h3><div class="b"><span>13 June 2026<br>Kwetu Nairobi, Kenya</span><span>Explore <i>+</i></span></div></a>
     </div>
@@ -215,7 +223,7 @@ def build_home():
         <div class="fees"><div>RCC members<b>{E(L['fee']['rcc'])}</b></div><div>Non-members<b>{E(L['fee']['non'])}</b></div></div>
         <div>{reg(extra='fill')}</div>
       </div>
-      <div class="pf" data-reveal>{img('poster-lagos', alt='The Wealth Table Lagos invitation: Saturday 21 November 2026, Civic Centre, Victoria Island', prefix='assets/img/')}</div>
+      <div class="pf" data-reveal>{img('poster-lagos-v2', alt='The Wealth Table Lagos invitation: Saturday 21 November 2026, Civic Centre, Victoria Island', prefix='assets/img/')}</div>
     </div>
   </section>
 

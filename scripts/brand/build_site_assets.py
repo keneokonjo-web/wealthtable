@@ -13,6 +13,6 @@ render('og', page(og, 1200, 630, bg=C['sand']), 1200, 630, f'{ROOT}/assets/img/o
 flush()
 Image.open(f'{ROOT}/assets/img/og.png').convert('RGB').save(f'{ROOT}/assets/img/og.jpg', quality=90, optimize=True, progressive=True); os.remove(f'{ROOT}/assets/img/og.png')
 # poster web copy from the 3x master
-Image.open(f'{KIT}/posters/poster-lagos-invitation.png').convert('RGB').resize((1200, 1800), Image.LANCZOS).save(f'{ROOT}/assets/img/poster-lagos.jpg', quality=92, optimize=True, progressive=True)
+Image.open(f'{KIT}/posters/poster-lagos-invitation.png').convert('RGB').resize((1200, 1800), Image.LANCZOS).save(f'{ROOT}/assets/img/poster-lagos-v2.jpg', quality=92, optimize=True, progressive=True)
 Image.open(f'{KIT}/avatars/avatar-olive-monogram.png').convert('RGB').resize((180, 180), Image.LANCZOS).save(f'{ROOT}/assets/img/apple-touch-icon.png')
 print('site assets done')

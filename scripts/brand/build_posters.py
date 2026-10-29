@@ -153,7 +153,7 @@ flush()
 
 # website copy of the typographic Lagos invitation
 from PIL import Image
-Image.open(f'{OUT}/poster-lagos-invitation.png').convert('RGB').resize((1200, 1800), Image.LANCZOS).save(f'{ROOT}/assets/img/poster-lagos.jpg', quality=92, optimize=True, progressive=True)
+Image.open(f'{OUT}/poster-lagos-invitation.png').convert('RGB').resize((1200, 1800), Image.LANCZOS).save(f'{ROOT}/assets/img/poster-lagos-v2.jpg', quality=92, optimize=True, progressive=True)
 # remove the superseded file names
 for old in ('poster-accra-recap.png', ):
     pass

@@ -100,7 +100,7 @@ body{font-weight:300;font-size:1rem;line-height:1.65}
 .cloud .s5{right:5%;top:46%;width:clamp(90px,11vw,180px);aspect-ratio:1}
 .cloud .s6{left:19%;bottom:4%;width:clamp(90px,12vw,200px);aspect-ratio:3/2}
 .cloud .s7{right:23%;bottom:4%;width:clamp(70px,9vw,150px);aspect-ratio:1}
-@media(max-width:700px){.cloud{min-height:680px}.cloud .s2{display:none}}
+@media(max-width:700px){.cloud{min-height:0;padding:250px 1.4rem}.cloud .s2,.cloud .s4,.cloud .s5{display:none}.cloud .s1{left:6%;top:36px;width:34%}.cloud .s3{right:6%;top:70px;width:30%}.cloud .s6{left:6%;bottom:40px;width:38%}.cloud .s7{right:8%;bottom:70px;width:26%}}
 
 /* gatherings: split rows */
 .gath{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,4vw,5rem);align-items:center;padding:clamp(3rem,6vw,5.5rem) 0;border-top:1px solid var(--line)}
